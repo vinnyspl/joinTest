@@ -1,0 +1,21 @@
+<?php
+
+$title = 'Remover Produto';
+
+$this->headTitle($title);
+
+$url=$this->url('produto',['action' => 'delete','id' => $categoria->getId()]);
+
+ ?>
+
+ <h1><?=$this->escapeHtml($title)?></h1>
+<p>Deseja remover a categoria?</p>
+<form action="<?php echo $url; ?>" method="post">
+
+	<div class="form-group">
+		<input type="hidden" name="id_categoria" value="<?php echo $categoria->getId(); ?>">
+		<input type="submit" class="btn btn-danger" name="del" value="Sim">
+        <a type="submit" href="<?php echo $this->url('produto',['action' => 'list']); ?>" class="btn btn-default"> Cancelar </a>
+	</div>
+	
+</form>

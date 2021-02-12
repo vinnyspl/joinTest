@@ -1,0 +1,37 @@
+<?php
+
+$title = 'Editar Categoria';
+
+$this->headTitle($title);
+
+ ?>
+
+ <h1><?=$this->escapeHtml($title)?></h1>
+
+<?php
+
+$form->setAttribute('action', $this->url('categoria', ['action' => 'edit','id' => $id]));
+$form->prepare();
+?>
+
+<?php
+echo $this->form()->openTag($form);
+echo $this->formHidden($form->get('id_categoria'));
+
+?>
+<br>
+<?php
+echo $this->formRow($form->get('nome_categoria'));
+?>
+<br>
+
+<?php
+echo $this->formRow($form->get('descricao_categoria'));
+?>
+<br>
+
+<?php
+echo $this->formSubmit($form->get('submit'));
+echo '<a type="submit" href="'.$this->url('categoria',['action' => 'list']).'" class="btn btn-danger" style="margin-left: 5px"> Cancelar </a>';
+echo $this->form()->closeTag();
+?>
