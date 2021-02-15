@@ -4,7 +4,7 @@ $title = 'Remover Produto';
 
 $this->headTitle($title);
 
-$url=$this->url('produto',['action' => 'delete','id' => $categoria->getId()]);
+$url=$this->url('produto',['action' => 'delete','id' => $produto->getId()]);
 
  ?>
 
@@ -13,7 +13,7 @@ $url=$this->url('produto',['action' => 'delete','id' => $categoria->getId()]);
 <form action="<?php echo $url; ?>" method="post">
 
 	<div class="form-group">
-		<input type="hidden" name="id_categoria" value="<?php echo $categoria->getId(); ?>">
+		<input type="hidden" name="id_produto" value="<?php echo $produto->getId(); ?>">
 		<input type="submit" class="btn btn-danger" name="del" value="Sim">
         <a type="submit" href="<?php echo $this->url('produto',['action' => 'list']); ?>" class="btn btn-default"> Cancelar </a>
 	</div>

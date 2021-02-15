@@ -22,15 +22,12 @@ $this->headTitle($title);
       </tr>
     </thead>
     <tbody>
-    <pre>
-    <?php var_dump($produtos)?>
-    </pre>
       <?php foreach ($produtos as $produto): ?>
       <tr>
         <td><?= $this->escapeHtml($produto->getId()) ?></td>
         <td><?= $this->escapeHtml($produto->getNome()) ?></td>
           <td><?= $this->escapeHtml($produto->getValor()) ?></td>
-          <td><?= $this->escapeHtml($produto->getCategoria()) ?></td>
+          <td><?= $this->escapeHtml($produto->getNomeCategoria()) ?></td>
         <td>
             <a class="btn btn-warning" href="<?php echo $this->url('produto',array('action' => 'edit','id' => $produto->getId())) ?>">Edit</a>
             <a class="btn btn-danger" href="<?php echo $this->url('produto',['action' => 'delete','id' => $produto->getId()]) ?>">Delete</a>

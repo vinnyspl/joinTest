@@ -71,13 +71,15 @@ class IndexController extends AbstractActionController
          }
  
          try {
-             $categoria = $this->table->getCategoria($id);
+             $produto = $this->table->getProduto($id);
          } catch(\Exception $e) {
              exit('Error with Produto table');
          }
-         $form = new \Categoria\Form\CategoriaForm();
+         $form = new \Produto\Form\ProdutoForm();
 
-         $form->bind($categoria);
+         $form->bind($produto);
+         $form->get('id_categoria')->setValueOptions($this->categoriasList());
+
          $request = $this->getRequest();
  
          //if not post request
@@ -94,7 +96,7 @@ class IndexController extends AbstractActionController
              exit('not valid');
          }
  
-         $this->table->saveCategoria($categoria);
+         $this->table->saveProduto($produto);
  
          return $this->redirect()->toRoute('produto', [
            'controller' => 'index',
@@ -121,7 +123,7 @@ class IndexController extends AbstractActionController
          }
  
          try {
-             $categoria = $this->table->getCategoria($id);
+             $produto = $this->table->getProduto($id);
          } catch(\Exception $e) {
              exit('Error with User table');
          }
@@ -131,8 +133,8 @@ class IndexController extends AbstractActionController
          //if not post request
          if (! $request->isPost()) {
              return new ViewModel([
-                 'produto' => $categoria,
-                 'id_categoria' => $id
+                 'produto' => $produto,
+                 'id_produto' => $id
              ]);
          }
          //if post request
@@ -141,8 +143,8 @@ class IndexController extends AbstractActionController
 
          if($del=='Sim')
          {
-            $id = (int) $categoria->getId();
-            $this->table->deleteCategoria($id);
+            $id = (int) $produto->getId();
+            $this->table->deleteProduto($id);
          }
             $this->redirect()->toRoute('produto',['action' => 'list']);
      }

@@ -24,7 +24,6 @@
     "autoload": {
         "psr-4": {
             "Application\\": "module/Application/src/",
-            "User\\": "module/User/src/",
             "Categoria\\": "module/Categoria/src/",
             "Produto\\": "module/Produto/src/"
         }

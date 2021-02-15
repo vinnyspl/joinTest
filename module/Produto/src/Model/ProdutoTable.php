@@ -38,7 +38,7 @@ class ProdutoTable
             'dt_cadastro' => $produto->getDtCadastro(),
             'valor_produto' => $produto->getValor(),
             'nome_produto' => $produto->getNome(),
-            'id_categoria' => $produto->getCategoria()
+            'id_categoria' => $produto->getIdCategoria()
     	];
         if($produto->getId()){
             $this->tableGateway->update($data,[

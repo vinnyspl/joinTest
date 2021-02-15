@@ -10,6 +10,7 @@ class Produto
     protected $nome_produto;
     protected $id_produto;
     protected $id_categoria;
+    protected $nome_categoria;
 
     public function exchangeArray(array $data)
     {
@@ -19,6 +20,7 @@ class Produto
         $this->nome_produto = $data['nome_produto'];
         $this->id_categoria = $data['id_categoria'];
         $this->id_produto = $data['id_produto'];
+        $this->nome_categoria = $data['nome_categoria'];
 
     }
     public function getArrayCopy()
@@ -33,9 +35,13 @@ class Produto
         ];  
 
     }
-     public function getId()
+    public function getId()
     {
-       return $this->id_produto;
+        return $this->id_produto;
+    }
+    public function getIdCategoria()
+    {
+        return $this->id_categoria;
     }
     public function getNome()
     {
@@ -52,7 +58,7 @@ class Produto
         return $this->dt_cadastro;
     }
 
-    public function getCategoria()
+    public function getNomeCategoria()
     {
        return $this->nome_categoria;
     }

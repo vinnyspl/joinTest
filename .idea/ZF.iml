@@ -6,7 +6,6 @@
       <sourceFolder url="file://$MODULE_DIR$/module/Application/test" isTestSource="true" packagePrefix="ApplicationTest\" />
       <sourceFolder url="file://$MODULE_DIR$/module/Categoria/src" isTestSource="false" packagePrefix="Categoria\" />
       <sourceFolder url="file://$MODULE_DIR$/module/Produto/src" isTestSource="false" packagePrefix="Produto\" />
-      <sourceFolder url="file://$MODULE_DIR$/module/User/src" isTestSource="false" packagePrefix="User\" />
       <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/zendframework/zend-filter" />

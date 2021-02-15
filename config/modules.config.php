@@ -21,7 +21,6 @@ return [
     'Zend\Router',
     'Zend\Validator',
     'Application',
-    'User',
     'Categoria',
     'Produto',
 ];
